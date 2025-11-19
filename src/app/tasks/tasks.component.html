@@ -1,0 +1,15 @@
+<section id="tasks">
+    <header>
+        <h2>{{ selectedName }}'s Tasks</h2>
+        <menu>
+            <button>Add Task</button>
+        </menu>
+    </header>
+    <ul>
+        @for(task of selectedUserArray; track task.id){
+            <li>
+                <app-task [task]="task"/>
+            </li>
+        }
+    </ul>
+</section>
