@@ -1,3 +1,4 @@
+import { NewTask } from './task/task.model';
 import { Component, Input } from '@angular/core';
 import { TaskComponent } from './task/task.component';
 import { AddTaskFormComponent } from "./add-task-form/add-task-form.component";
@@ -49,6 +50,16 @@ export class TasksComponent {
     console.log(this.isAddTask)
   }
   onCancelAddTask(){
+    this.isAddTask=false;
+  }
+  submitNewData(task:NewTask){
+    this.tasks.push({
+      id: new Date().getTime().toString(),
+      userId:this.userId,
+      title:task.title,
+      summary:task.summary,
+      dueDate:task.date,
+    })
     this.isAddTask=false;
   }
 }

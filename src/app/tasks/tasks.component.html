@@ -6,7 +6,7 @@
         </menu>
     </header>
     @if (isAddTask) {
-        <app-add-task-form (isClosed)="onCancelAddTask()"/>
+        <app-add-task-form (enteredData)="submitNewData($event)" (isClosed)="onCancelAddTask()"/>
     }
     <ul>
         @for(task of selectedUserArray; track task.id){
