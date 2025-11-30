@@ -2,9 +2,12 @@
     <header>
         <h2>{{ selectedName }}'s Tasks</h2>
         <menu>
-            <button>Add Task</button>
+            <button (click)="onAddTask()">Add Task</button>
         </menu>
     </header>
+    @if (isAddTask) {
+        <app-add-task-form (isClosed)="onCancelAddTask()"/>
+    }
     <ul>
         @for(task of selectedUserArray; track task.id){
             <li>
@@ -12,4 +15,5 @@
             </li>
         }
     </ul>
+
 </section>
