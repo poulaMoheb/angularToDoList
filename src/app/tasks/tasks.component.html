@@ -6,12 +6,12 @@
         </menu>
     </header>
     @if (isAddTask) {
-        <app-add-task-form (enteredData)="submitNewData($event)" (isClosed)="onCancelAddTask()"/>
+        <app-add-task-form [userId]="userId" (isClosed)="onCancelAddTask()"/>
     }
     <ul>
         @for(task of selectedUserArray; track task.id){
             <li>
-                <app-task [task]="task" (completedTask)="completeTask($event)"/>
+                <app-task [task]="task" />
             </li>
         }
     </ul>
